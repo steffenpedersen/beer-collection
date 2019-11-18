@@ -1,21 +1,24 @@
+import axios from 'axios';
+
 const state = {
-    beers: [
-        {
-            id: 1,
-            title: 'Beer One'
-        },
-        {
-            id: 2,
-            title: 'Beer Two'
-        }
-    ]
+    beers: []
 };
 
 const getters = {
     allBeers: state => state.beers
 };
 
-const actions = {};
+const actions = {
+    async getBeers() {
+        const response = await axios.get('http://localhost:8080/v2/beers/', {
+            params: {
+                key: `${process.env.VUE_APP_API_KEY}`
+              }          
+        });
+
+        console.log(response.data.data)
+    }
+};
 
 const mutations = {};
 

@@ -8,11 +8,17 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
     name: 'Beers',
-    computed: mapGetters(['allBeers'])
+    methods: {
+        ...mapActions(['getBeers'])
+    },
+    computed: mapGetters(['allBeers']),
+    created() {
+        this.getBeers();
+    }
 }
 </script>
 
