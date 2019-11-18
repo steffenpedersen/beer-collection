@@ -2,7 +2,7 @@
   <div>
       <h3>Beers</h3>
         <div v-for="beer in allBeers" :key="beer.id">
-            {{ beer.title }}
+            {{ beer.name }}
         </div>
   </div>
 </template>

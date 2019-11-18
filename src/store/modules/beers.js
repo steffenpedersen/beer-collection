@@ -9,18 +9,20 @@ const getters = {
 };
 
 const actions = {
-    async getBeers() {
+    async getBeers({ commit }) {
         const response = await axios.get('http://localhost:8080/v2/beers/', {
             params: {
                 key: `${process.env.VUE_APP_API_KEY}`
               }          
         });
 
-        console.log(response.data.data)
+        commit('setBeers', response.data.data)
     }
 };
 
-const mutations = {};
+const mutations = {
+    setBeers: (state, beers) => (state.beers = beers)
+};
 
 export default {
     state,
