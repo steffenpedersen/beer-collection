@@ -1,5 +1,10 @@
 # beer-collection
 
+## Setup `.env` file
+```
+VUE_APP_API_KEY=
+```
+
 ## Project setup
 ```
 npm install
