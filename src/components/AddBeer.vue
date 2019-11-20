@@ -42,7 +42,7 @@ input[type="text"] {
   margin-right: 1em;
 }
 
-input[type="text"]:focus {
+input:focus {
   outline: none;
 }
 
