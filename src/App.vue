@@ -1,23 +1,22 @@
 <template>
   <div id="app">
-    <AddBeer/>
-    <Beers/>
+    <AddBeer />
+    <Beers />
   </div>
 </template>
 
 <script>
-import Beers from './components/Beers.vue'
-import AddBeer from './components/AddBeer.vue'
+import Beers from "./components/Beers.vue";
+import AddBeer from "./components/AddBeer.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Beers,
     AddBeer
   }
-}
+};
 </script>
 
 <style>
-
 </style>

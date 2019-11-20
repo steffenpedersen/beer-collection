@@ -3,24 +3,24 @@
     <h3>Add Beer</h3>
 
     <form @submit="onSubmit">
-        <input type="text" v-model="name" placeholder="Add beer">
-        <input type="submit" value="Submit">
+      <input type="text" v-model="name" placeholder="Add beer" />
+      <input type="submit" value="Submit" />
     </form>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 
 export default {
-  name: 'AddBeer',
+  name: "AddBeer",
   data() {
     return {
-      name: ''
+      name: ""
     };
   },
   methods: {
-    ...mapActions(['addBeer']),
+    ...mapActions(["addBeer"]),
     onSubmit(e) {
       e.preventDefault();
       this.addBeer(this.name);
@@ -30,5 +30,4 @@ export default {
 </script>
 
 <style>
-
 </style>
