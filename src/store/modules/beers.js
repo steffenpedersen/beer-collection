@@ -1,13 +1,19 @@
 import axios from 'axios';
 
+// Beers module
+// Each module can have its own state, getters, actions and mutations
+
+// App-level state/data (todos, posts etc.)
 const state = {
   beers: []
 };
 
+// Get pieces of state or computed values from state
 const getters = {
   allBeers: state => state.beers
 };
 
+// Called from components to commit a mutation
 const actions = {
   async getBeers({ commit }) {
     const response = await axios.get('http://localhost:8080/v2/beers/', {
@@ -31,6 +37,7 @@ const actions = {
   }
 };
 
+// Mutate the state (update data)
 const mutations = {
   setBeers: (state, beers) => (state.beers = beers),
   newBeer: (state, beer) => state.beers.unshift(beer)
