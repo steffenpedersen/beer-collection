@@ -31,6 +31,11 @@ body {
   font-family: sans-serif;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 #app {
   margin: 1em 2em;
 }
