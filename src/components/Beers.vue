@@ -1,24 +1,33 @@
 <template>
-  <section class="beers">
-    <div v-for="beer in allBeers" :key="beer.id" class="card">
-      <div class="card__header">
-        <time class="text-grey">{{ beer.createDate }}</time>
-        <h3 class="mrg-half">{{ beer.name }}</h3>
+  <section>
+    <AddBeer />
+    <div class="beers">
+      <div v-for="beer in allBeers" :key="beer.id" class="card">
+        <div class="card__header">
+          <time class="text-grey">{{ beer.createDate }}</time>
+          <h3 class="mrg-half">{{ beer.name }}</h3>
+        </div>
+        <div class="card__body">
+          <h4 class="text-yellow mrg-half">Status</h4>
+          <p class="mrg-half">{{ beer.statusDisplay }}</p>
+        </div>
+        <button>
+          <router-link :to="{ path: '/beer/' + beer.id }">More info</router-link>
+        </button>
       </div>
-      <div class="card__body">
-        <h4 class="text-yellow mrg-half">Status</h4>
-        <p class="mrg-half">{{ beer.statusDisplay }}</p>
-      </div>
-      <button>More info</button>
     </div>
   </section>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import AddBeer from "./AddBeer.vue";
 
 export default {
   name: "Beers",
+  components: {
+    AddBeer
+  },
   methods: {
     ...mapActions(["getBeers"])
   },

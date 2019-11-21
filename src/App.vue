@@ -1,20 +1,17 @@
 <template>
   <div id="app">
     <h1>Beer Collection</h1>
-    <AddBeer />
-    <Beers />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Beers from "./components/Beers.vue";
-import AddBeer from "./components/AddBeer.vue";
 
 export default {
   name: "app",
   components: {
-    Beers,
-    AddBeer
+    Beers
   }
 };
 </script>
