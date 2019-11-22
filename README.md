@@ -43,11 +43,12 @@ npm run serve
 
 Here is a list with a description of the content of the folders. I have mostly used the structure from Vue Cli.
 
-* `public`: The content of this folder will simply be copied and not go through webpack. This is mainly for `index.html` and static assets `favicon.ico`.
-* `src`: This folder contains all of the main `src` files.
-  * `assets`: This folder contains the project’s assets such as `logo.png`.
-  * `components`: This folder contains the Vue components.
-  * `store`: This folder contains all of the Vuex modules.
+* **root**: The root contains all of the configurations like `.gitignore`, `babel.config.js`, `package.json` and `vue.config.js`.
+  * **public**: The content of this folder will simply be copied and not go through webpack. This is mainly for `index.html` and static assets `favicon.ico`.
+  * **src**: This folder contains all of the main `src` files.
+    * **assets**: This folder contains the project’s assets such as `logo.png`.
+    * **components**: This folder contains the Vue components.
+    * **store**: This folder contains all of the Vuex modules.
 
 ## About
 
