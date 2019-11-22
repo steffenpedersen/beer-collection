@@ -15,14 +15,18 @@ const getters = {
 
 // Called from components to commit a mutation
 const actions = {
-  async getBeers({ commit }) {
-    const response = await axios.get('http://localhost:8080/v2/beers/', {
+  getBeers({ commit }) {
+    axios.get('http://localhost:8080/v2/beers/', {
       params: {
         key: `${process.env.VUE_APP_API_KEY}`
       }
-    });
-
-    commit('setBeers', response.data.data)
+    })
+    .then(response => {
+      commit('setBeers', response.data.data)
+    })
+    .catch(error => {
+      console.error(error.response)
+    })
   },
   async addBeer({ commit }, name) {
     // Note: BreweryDB doesn't support post
