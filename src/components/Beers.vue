@@ -2,8 +2,10 @@
   <section>
     <AddBeer />
     <div class="beers">
+      <!-- Use v-for directive to render a list of beers -->
       <div v-for="beer in allBeers" :key="beer.id" class="card">
         <div class="card__header">
+          <!-- Use interpolation to get information from beer -->
           <time class="text-grey">{{ beer.createDate }}</time>
           <h3 class="mrg-half">{{ beer.name }}</h3>
         </div>
@@ -12,6 +14,7 @@
           <p class="mrg-half">{{ beer.statusDisplay }}</p>
         </div>
         <button>
+          <!-- Use router-link component with v-bind directive for beer.id -->
           <router-link :to="{ path: '/beer/' + beer.id }">More info</router-link>
         </button>
       </div>
@@ -20,6 +23,8 @@
 </template>
 
 <script>
+// Vuex helpers to map store getters to
+// computed properties and dispatch an action
 import { mapGetters, mapActions } from "vuex";
 import AddBeer from "./AddBeer.vue";
 
@@ -29,8 +34,11 @@ export default {
     AddBeer
   },
   methods: {
+    // Use spread operation on helper
+    // to get addBeer action function
     ...mapActions(["getBeers"])
   },
+  // Logic for our template to find all beers
   computed: mapGetters(["allBeers"]),
   created() {
     this.getBeers();

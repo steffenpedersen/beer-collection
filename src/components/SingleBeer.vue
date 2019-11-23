@@ -1,33 +1,41 @@
 <template>
   <section class="single-beer">
     <div>
+      <!-- Use v-if directive to conditionally render image -->
+      <!-- Use interpolation to get information from beer -->
       <img v-if="beer.labels" :src="beer.labels.large" alt />
     </div>
     <div>
       <time>{{ beer.createDate }}</time>
       <h2>{{ beer.name }}</h2>
       <p v-if="beer.description">{{ beer.description }}</p>
+      <!-- Use router-link component to go back to root -->
       <router-link to="/" class="go-back">Back</router-link>
     </div>
   </section>
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+// Vuex helper to dispatch an action
+import { mapActions } from "vuex";
 
 export default {
   name: "SingleBeer",
   methods: {
+    // Use spread operation on helper
+    // to get addBeer action function
     ...mapActions(["getBeers"])
   },
   computed: {
-    ...mapGetters(["allBeers"]),
+    // Logic for our template to find the exact beer
     beer() {
-      return this.$store.state.beers.beers.find(
-        beer => beer.id == this.$route.params.id
-      );
+      return this.$store.state.beers.beers.find(beer => {
+        beer.id == this.$route.params.id;
+      });
     }
   },
+  // Life cycle hook to run code
+  // after an instance is created
   created() {
     this.getBeers();
   }

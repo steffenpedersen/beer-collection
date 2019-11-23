@@ -28,7 +28,7 @@ const actions = {
       console.error(error.response)
     })
   },
-  async addBeer({ commit }, name) {
+  addBeer({ commit }, name) {
     // Note: BreweryDB doesn't support post
     // READ ONLY MODE: The beer has been successfully added
     // and is waiting to be approved by our administrators

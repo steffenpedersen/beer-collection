@@ -1,6 +1,8 @@
 <template>
   <section class="add-beer">
+    <!-- Use @submit to handle form submission -->
     <form @submit="onSubmit">
+      <!-- Create two-way binding on form input with name (DOM to JS) -->
       <input type="text" v-model="name" placeholder="Add beer" />
       <input type="submit" value="Submit" />
     </form>
@@ -8,6 +10,7 @@
 </template>
 
 <script>
+// Vuex helper to dispatch an action
 import { mapActions } from "vuex";
 
 export default {
@@ -18,9 +21,13 @@ export default {
     };
   },
   methods: {
+    // Use spread operation on helper
+    // to get addBeer action function
     ...mapActions(["addBeer"]),
-    onSubmit(e) {
-      e.preventDefault();
+    onSubmit(event) {
+      // Don't submit the form
+      event.preventDefault();
+      // Use Vuex action to add beer
       this.addBeer(this.name);
     }
   }
