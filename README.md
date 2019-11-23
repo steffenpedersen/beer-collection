@@ -9,32 +9,32 @@
   * [Styling](#styling)
   * [Axios POST](#axios-post)
   * [Tests](#tests)
-  * [UX](#ux)
-
-
+  * [Features and UX](#features-and-ux)
+  * [Architecture](#architecture)
+  * [Docker](#docker)
 
 ## Run Project
 
 This is how you setup the project. You need to make a `.env` file with an environment variable. This has the API key for BreweryDB. You then need to `source` the `.env` file. When you have done that, you can `npm install` and `npm run serve`.
 
-### Setup `.env` file
+**Setup `.env` file**
 
 ```sh
 VUE_APP_API_KEY=
 ```
 
-### Source `.env` file
+**Source `.env` file**
 
 ```sh
 source .env
 ```
 
-### Project setup
+**Project setup**
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+**Run the project**
 ```
 npm run serve
 ```
@@ -100,3 +100,9 @@ This is of course a prototype and the UX is not that great. We could do a tonne 
 ### Architecture
 
 The Vue.js components easily gets bloated. Here we could seperate the content to different files containing logic, views and styling. It would also be great to seperate main components like `Beers.vue` and partial components like `SingleBeer.vue`, as it will be a mess in the long run.
+
+### Docker
+
+Docker is a tool that makes it easier to run applications by using containers. Containers allow a developer to package up an application with all source code, dependencies, and turn it into one package. I think it's great, because you are able to encapsulate the project and avoid dependency mistakes.
+
+It's also great, if you use services like [TeamCity](https://www.jetbrains.com/teamcity/) to build, test and deploy the project, because you are with the help of Docker creating a stable environment.
