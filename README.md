@@ -70,17 +70,17 @@ I have written down a few thoughts on possible further development.
 
 ### TypeScript
 
-I could have chose to use TypeScript, but it would maybe be too much setup for such a small application.
+As I mentioned before, this project is not that big. But if we knew, that this application would scale up, it could be beneficial to use TypeScript. It gives the option of static typing and I have often seen great support of code completion and IntelliSense.
 
 ### Styling
 
-I haven't paid that much attention to styling of the application. I have made a [BEMIT Boilerplate](https://github.com/steffenpedersen/bemit-boilerplate), which could be a possible setup.
+The styling and therefore CSS wasn't my main focus of building this project. I have earlier made a [BEMIT Boilerplate](https://github.com/steffenpedersen/bemit-boilerplate), which could be a possible setup.
 
 I have used CSS Grid on the beers list. Here it would be possible to use CSS Flexbox to control the content. In [this article](https://dev.to/steffenpedersen/css-now-and-the-future-28n3) I have written about CSS Grid and CSS Flexbox. Mosts browsers support these properties, so we don't have to use `@supports` at-rule.
 
 ### Axios POST
 
-I wanted to `POST` a request to BreweryDB. I couldn't do that due to restrictions on their API.
+I wanted to `POST` a request to BreweryDB. I couldn't do that due to restrictions on their API. So, the obvious next step would be to be able to `POST` beers to a database.
 
 ```sh
 {
@@ -93,13 +93,15 @@ I wanted to `POST` a request to BreweryDB. I couldn't do that due to restriction
 
 It would be great to make tests and especially integration tests. This should be done to check that we're getting a 200 response from the API. We chould do this with the Mocha test framework.
 
+Kent Beck (author of Test Driven Development) once wrote _"I get paid for code that works, not for tests"_. I think it's funny that the author of TDD wrote that.
+
 ### Features and UX
 
-This is of course a prototype and the UX is not that great. We could do a tonne of improvements with a few features as pagination and even small features like hover effects.
+This is of course a prototype and the UX is not that great. We could do a tonne of improvements with a few features as pagination and even small improvements as hover effects.
 
 ### Architecture
 
-The Vue.js components easily gets bloated. Here we could seperate the content to different files containing logic, views and styling. It would also be great to seperate main components like `Beers.vue` and partial components like `SingleBeer.vue`, as it will be a mess in the long run.
+The Vue.js components easily gets bloated. Here we could seperate the content to files containing logic, views and styling. It would also be great to seperate main components like `Beers.vue` and partial components like `SingleBeer.vue`, as it will be a mess in the long run.
 
 ### Docker
 
