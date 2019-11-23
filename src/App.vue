@@ -1,18 +1,14 @@
 <template>
   <div id="app">
     <h1>Beer Collection</h1>
+    <!-- Render the matched component for the given path -->
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Beers from "./components/Beers.vue";
-
 export default {
-  name: "app",
-  components: {
-    Beers
-  }
+  name: "app"
 };
 </script>
 

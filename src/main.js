@@ -6,16 +6,19 @@ import Routes from './routes'
 
 Vue.config.productionTip = false
 
+// Load VueRouter
 Vue.use(VueRouter);
 
 // Register routes
 const router = new VueRouter({
-    routes: Routes,
-    // URL will look "normal" 
-    // instead of hash #
-    mode: 'history'
+  // Load in routes
+  routes: Routes,
+  // URL will look "normal"
+  // instead of hash #
+  mode: 'history'
 });
 
+// Initialize Vue
 new Vue({
   store,
   render: h => h(App),
