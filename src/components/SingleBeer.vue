@@ -29,9 +29,9 @@ export default {
   computed: {
     // Logic for our template to find the exact beer
     beer() {
-      return this.$store.state.beers.beers.find(beer => {
-        beer.id == this.$route.params.id;
-      });
+      return this.$store.state.beers.beers.find(
+        beer => beer.id == this.$route.params.id
+      );
     }
   },
   // Life cycle hook to run code
