@@ -35,11 +35,14 @@ export default {
   },
   methods: {
     // Use spread operation on helper
-    // to get addBeer action function
+    // to get getBeers action function
     ...mapActions(["getBeers"])
   },
   // Logic for our template to find all beers
   computed: mapGetters(["allBeers"]),
+  // Life cycle hook to load all
+  // beers to state after instance
+  // is created
   created() {
     this.getBeers();
   }
@@ -78,7 +81,6 @@ export default {
 }
 
 .card {
-  display: inline-block;
   background-color: var(--color-white);
   padding: 2em;
   border-radius: 1em;

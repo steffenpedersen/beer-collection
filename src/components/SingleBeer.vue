@@ -34,8 +34,9 @@ export default {
       );
     }
   },
-  // Life cycle hook to run code
-  // after an instance is created
+  // Life cycle hook to load all
+  // beers to state after instance
+  // is created
   created() {
     this.getBeers();
   }

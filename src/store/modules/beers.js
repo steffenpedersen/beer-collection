@@ -3,7 +3,7 @@ import axios from 'axios';
 // Beers module
 // Each module can have its own state, getters, actions and mutations
 
-// App-level state/data (todos, posts etc.)
+// App-level state/data
 const state = {
   beers: []
 };
@@ -15,6 +15,7 @@ const getters = {
 
 // Called from components to commit a mutation
 const actions = {
+  // Destructuring to get commit
   getBeers({ commit }) {
     // Make a request for all BreweryDB beers
     axios.get('http://localhost:8080/v2/beers/', {

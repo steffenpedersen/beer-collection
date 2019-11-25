@@ -70,7 +70,7 @@ I have written down a few thoughts on possible further development.
 
 ### TypeScript
 
-As I mentioned before, this project is not that big. But if we knew, that this application would scale up, it could be beneficial to use TypeScript. It gives the option of static typing and I have often seen great support of code completion and IntelliSense.
+As I mentioned before, this project is not that big. But if we knew, that this application would scale up, it could be beneficial to use TypeScript. It gives the option of static typing and I have often seen great support of code completion and IntelliSense. But if you decide to use TypeScript, I think it's important, that you know why you are using it. I can easily become plain JavaScript in a `.ts`.
 
 ### Styling
 
