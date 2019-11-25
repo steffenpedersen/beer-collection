@@ -43,7 +43,7 @@ input[type="text"] {
   background: transparent;
   border: none;
   font-size: 0.8em;
-  color: darkgray;
+  color: var(--color-grey);
   padding: 1em;
   border-bottom: 1px solid rgba(177, 177, 177, 0.2);
   margin-right: 1em;
